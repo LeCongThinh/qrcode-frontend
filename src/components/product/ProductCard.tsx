@@ -1,8 +1,10 @@
 import React from "react";
 import type { Product } from "../../data/product";
+const BASE_URL = window.location.origin;
 
 const ProductCard: React.FC<Product> = ({
     name,
+    slug,
     sku,
     price,
     status,
@@ -41,7 +43,7 @@ const ProductCard: React.FC<Product> = ({
                 </div>
 
                 <h3 className="min-h-12 text-[15px] font-semibold leading-5 text-slate-800">
-                    {name.length > 60 ? `${name.slice(0, 60)}...` : name}
+                    {name.length > 45 ? `${name.slice(0, 45)}...` : name}
                 </h3>
 
                 <div className="flex items-start justify-between pt-1">
@@ -58,7 +60,7 @@ const ProductCard: React.FC<Product> = ({
                     </div>
                     <div className="-mt-9 self-start rounded-md border border-slate-200 bg-white p-1 shadow-sm">
                         <img
-                            src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=PrinterProduct"
+                            src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${BASE_URL}/product/${slug}`}
                             alt="QR Code"
                             className="h-22 w-22 object-cover transition-transform duration-300"
                         />
