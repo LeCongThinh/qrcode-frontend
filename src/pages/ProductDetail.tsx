@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { MOCK_PRODUCTS } from '../../data/product';
+import { MOCK_PRODUCTS } from '../data/product';
 const ProductDetail = () => {
     const { slug } = useParams();
 

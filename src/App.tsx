@@ -1,7 +1,7 @@
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import Layout from './components/layout/Layout.tsx';
 import ProductList from './pages/ProductList';
-import ProductDetail  from './components/product/ProductDetail';
+import ProductDetail  from './pages/ProductDetail.tsx';
 function App() {
   return (
     <BrowserRouter>
