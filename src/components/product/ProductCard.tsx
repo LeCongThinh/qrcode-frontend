@@ -30,7 +30,7 @@ const ProductCard: React.FC<Product> = ({
                             : "bg-slate-200 text-slate-600"
                             }`}
                     >
-                        {stock > 0 ? `Còn hàng (${stock})` : "Hết hàng"}
+                        {stock > 0 ? `Còn hàng` : "Hết hàng"}
                     </span>
                 </div>
             </div>
