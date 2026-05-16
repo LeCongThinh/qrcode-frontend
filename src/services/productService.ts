@@ -13,6 +13,16 @@ export const productService = {
     getProductBySlug: async (slug: string): Promise<Product> => {
         const response = await api.get(`/products/${slug}`);
         return response.data;
+    },
+
+    // Thêm mới sản phẩm. Thêm cấu hình headers multipart/form-data vào request POST
+    createProduct: async (formData: FormData): Promise<{ status: string; message: string; data: Product }> => {
+        const response = await api.post('/products', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        });
+        return response.data;
     }
-    
+
 };
