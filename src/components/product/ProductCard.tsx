@@ -10,7 +10,7 @@ const ProductCard: React.FC<Product> = ({
     image_url,
     stock,
 }) => {
-    // Tạo link gốc
+        // Tạo link gốc
     const rawQrLink = `${BASE_URL}/product/${slug}`;
     return (
         <div className="group overflow-hidden rounded-lg border border-slate-300 bg-white transition-all duration-300 hover:shadow-2xl hover:shadow-slate-400/40">
