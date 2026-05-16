@@ -1,7 +1,9 @@
 import { useProducts } from '../hooks/useProducts';
 import ProductCard from '../components/product/ProductCard';
+import { useNavigate } from 'react-router-dom';
 
 const ProductList = () => {
+    const navigate = useNavigate();
     // Lấy dữ liệu thực tế, trạng thái tải và hàm tải lại từ Hook
     const { products, isLoading } = useProducts();
 
@@ -26,7 +28,7 @@ const ProductList = () => {
                     </p>
                 </div>
                 <button
-                    onClick={() => console.log("Thêm sản phẩm")}
+                    onClick={() => navigate('/product/create')}
                     className="cursor-pointer rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium 
                     text-slate-700 transition hover:bg-slate-50">
                     + Thêm sản phẩm
