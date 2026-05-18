@@ -1,6 +1,7 @@
 import React from "react";
 import type { Product } from "../../data/product";
-const BASE_URL = window.location.origin;
+import { Link } from "react-router-dom";
+const BASE_URL = import.meta.env.VITE_APP_URL;
 
 const ProductCard: React.FC<Product> = ({
     name,
@@ -10,10 +11,10 @@ const ProductCard: React.FC<Product> = ({
     image_url,
     stock,
 }) => {
-        // Tạo link gốc
+    // Tạo link gốc
     const rawQrLink = `${BASE_URL}/product/${slug}`;
     return (
-        <div className="group overflow-hidden rounded-lg border border-slate-300 bg-white transition-all duration-300 hover:shadow-2xl hover:shadow-slate-400/40">
+        <Link to={`/product/view/${slug}`} className="group block overflow-hidden rounded-lg border border-slate-300 bg-white transition-all duration-300 hover:shadow-2xl hover:shadow-slate-400/40 cursor-pointer text-current no-underline">
             {/* Ảnh sản phẩm */}
             <div className="relative overflow-hidden border-b border-slate-100 bg-white">
                 <img
@@ -72,7 +73,7 @@ const ProductCard: React.FC<Product> = ({
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
